@@ -32,9 +32,9 @@
                 <div class="msj error">
                     <?php echo $error; ?>
                 </div>
-            <?php elseif($envio): ?>
+            <?php elseif($envio_msg): ?>
                 <div class="msj success">
-                    <p>Enviado Correctamente</p>
+                    <p>Datos enviados correctamente</p>
                 </div>
             <?php endif ?>
 
