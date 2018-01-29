@@ -13,11 +13,16 @@
     <div class="contenedor">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
         
-            <input type="text" name="name"  placeholder="Nombre" class="form-control">
+            <input type="text" name="name"  placeholder="Nombre" class="form-control" value="<?php if(!$envio_msg && isset($nombre)) echo $nombre ?>">
 
-            <input type="email" name="mail"  placeholder="Correo" class="form-control">
+            <input type="email" name="mail"  placeholder="Correo" class="form-control" value="<?php if(!$envio_msg && isset($correo)) echo $correo ?>">
 
-            <textarea placeholder="mensaje" class="form-control" name="message"></textarea>
+            <textarea placeholder="mensaje" class="form-control" name="message"><?php if(!$envio_msg && isset($mensaje)) echo $mensaje ?></textarea>
+
+            <!-- <?php if(!$envio_msg && isset($nombre)) echo $nombre ?> 
+            Condicionales que permitirán validar dos cuestiones: primero que el valor de $envio_msg sea 'false', y segundo, que también existan información dentro de los campos nombre, correo y mensaje. 
+            Lo anterior se realiza con la intención de que si hay algo escrito dentro de los tres campos, no se borren al intentar enviar los datos cuando se presione en el botón de envío.
+            -->
 
             <!-- <div class="msj error">
                 Lorem ipsum dolor sit amet consectetur.
